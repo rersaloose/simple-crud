@@ -1,0 +1,33 @@
+
+<div class="container text-center ">
+    <h2> My BankId: 
+        {{bankdetais.bankId}}
+   </h2>
+   <h3>AccTreeId:
+    {{bankdetais.accTreeId}} </h3>
+   </div>
+ 
+
+<!-- ca Body -->
+<div class="container ">
+
+     <div class="bank ">
+           <div class="card " >
+             <img src="/assets/1545545988_456_40938_bank.jpg" class="card-img-top" width="100">
+             <div class="card-body">
+               <h3 class="card-title">{{bankdetais.name}}</h3>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit minus vel delectus accusamus, magni sed consectetur suscipit numquam praesentium perspiciatis officiis illum aliquam cumque quis sapiente esse blanditiis obcaecati impedit.</p>
+               <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                 <!-- <button type="button" class="btn btn-danger"(click)="Prev()" >Prev</button> -->
+                 <button type="button" class="btn btn-warning py-1 px-5 " (click)="BACK()" >BACK</button>
+                 <!-- <button type="button" class="btn btn-success" (click)="Next()" >Next</button> -->
+               </div>
+             </div>
+             <div class="card-footer footer">
+                 <p class="card-text">{{bankdetais.createDate |date}}</p>
+             </div>
+           </div>
+        
+     </div>
+
+</div>

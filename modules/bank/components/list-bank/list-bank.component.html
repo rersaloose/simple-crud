@@ -1,0 +1,90 @@
+<div class="mt-5">
+  <div class="d-flex justify-content-end">
+    <button class="addbank" mat-stroked-button (click)="addBank()">
+      Add Bank
+    </button>
+  </div>
+
+  <!-- <div class="listBox">
+    <table mat-table [dataSource]="allBank" class="mat-elevation-z8 w-100 mt-2">
+    
+     
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>id</th>
+         <td mat-cell *matCellDef="let element;let index = index"> 
+        <td mat-cell *matCellDef="let allBank">{{element.id}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+    
+      <ng-container matColumnDef="createdBy">
+        <th mat-header-cell *matHeaderCellDef>createdBy</th>
+        <td mat-cell *matCellDef="let element">{{ element.createdBy }}</td>
+   
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="w-20">actions</th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            class="btn btn-warning"
+            mat-raised-button
+            (click)="updateBank(allBank)"
+          >
+            Update
+          </button>
+          <button
+            mat-raised-button
+            color="warn"
+            (click)="deletebank(allBank.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-ro *matRowDef="let row; colums: displayedColumns;"> </tr>
+     
+    </table>
+  </div> -->
+  <div class="table" *ngIf="!showSpinner">
+    <table class="table text-center">
+      <thead>
+        <tr>
+        
+          <th>Id</th>
+          <th>name</th>
+          <th>createdBy</th>
+          <th>actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of allBank">
+          <td>{{ item.bankId }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.createdBy }}</td>
+          <td>
+            <button class="btn btn-success" (click)="updatebank(item)">
+              Update
+            </button>
+            <button class="btn btn-danger" (click)="deletebank(item.bankId)">
+              Delete
+            </button>
+            <button
+              class="btn btn-warning"
+              routerLink="/details/{{ item.bankId }}"
+            >
+              Detalis
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="text-center w-100%  align-items-center" *ngIf="showSpinner">
+  <app-spinner> </app-spinner>
+</div>
